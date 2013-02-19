@@ -1718,18 +1718,237 @@ Lab 6
 
  - .click(), .dblclick(), .focusin(), .hover(), .mousedown(), .mouseenter(), .mouseleave(), .mouseout(), .mouseup(), .select(), .submit()
 
+=======
+Effects
+=======
+
+.animate()
+==========
+
+Perform a custom animation of a set of CSS properties.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; left: 10px; }
+    </style>
+    <button id="right">Click to animate</button>
+    <div></div>
+    <script>
+    $("#right").on("click", function(){
+      $("div").animate( {"left": "+=50px"}, "slow" );
+    });
+    </script>
+
+.delay()
+========
+
+Set a timer to delay execution of subsequent items in the queue.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <div></div>
+    <script>
+    $("div").slideUp("slow").delay(1000).slideDown("slow");
+    </script>
+
+.fadeIn()
+=========
+
+Display the matched elements by fading them to opaque.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; display: none; }
+    </style>
+    <div></div>
+    <script>
+    $("div").filter(":hidden").fadeIn("slow");
+    </script>
+
+.fadeOut()
+==========
+
+Hide the matched elements by fading them to transparent.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <div></div>
+    <script>
+    $("div").on("click", function() {
+        $(this).fadeOut("slow");
+    });
+    </script>
+
+.fadeTo()
+=========
+
+Adjust the opacity of the matched elements.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <div></div>
+    <script>
+    $("div").on("click", function() {
+        $(this).fadeTo("slow", 0.33);
+    });
+    </script>
+
+.fadeToggle()
+=============
+
+Display or hide the matched elements by animating their opacity.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <div></div>
+    <script>
+    $("div").on("click", function() {
+        $(this).fadeToggle("slow", "linear");
+    });
+    </script>
+
+.hide()
+=======
+
+Hide the matched elements.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <button>Click to hide</button>
+    <div></div>
+    <script>
+    $("button").on("click", function() {
+        $("div").hide("slow");
+    });
+    </script>
+
+.show()
+=======
+
+Display the matched elements.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; display: none; }
+    </style>
+    <button>Click to show</button>
+    <div></div>
+    <script>
+    $("button").on("click", function() {
+        $("div").show("slow");
+    });
+    </script>
+
+.slideDown()
+============
+
+Display the matched elements with a sliding motion.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <button>Click to slideDown</button>
+    <div></div>
+    <script>
+    $(button).on("click", function() {
+        $("div").slideDown("slow");
+    });
+    </script>
+
+.slideToggle()
+==============
+
+Display or hide the matched elements with a sliding motion.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; display: none; }
+    </style>
+    <button>Click to slideDown</button>
+    <div></div>
+    <script>
+    $(button).on("click", function() {
+        $("div").slideDown("slow");
+    });
+    </script>
+
+.slideUp()
+==========
+
+Hide the matched elements with a sliding motion.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    </style>
+    <button>Click to slideUp</button>
+    <div></div>
+    <script>
+    $(button).on("click", function() {
+        $("div").slideUp("slow");
+    });
+    </script>
+
+.toggle()
+=========
+
+Display or hide the matched elements.
+
+.. code-block:: html
+
+    <style>
+    div { background-color: green; height: 50px; width: 50px; }
+    div.hidden { background-color: red; display: none; }
+    </style>
+    <button>Toggle Display</button>
+    <div>Green</div>
+    <div class="hidden">Red</div>
+    <script>
+    $("button").on("click", function() {
+        $("div").toggle();
+    });
+    </script>
+
 Lab 7
 =====
 
-- CSS Switcher
-- Dynamic Content
+- Use jQuery to add selected effects within your document.
+- Implement 5 of the following effect methods.
+
+ - .animate(), .delay(), .fadeIn(), .fadeOut(), .fadeTo(), .fadeToggle(), .hide(), .show(), .slideDown(), .slideToggle(), .slideUp(), .toggle()
 
 Lab 8
 =====
 
+Demonstrations and hands-on labs:
+
 - FAQ
+- CSS Switcher
 - Contact Form
 - Image Slider
+- Dynamic Content
 
 ============
 Class Review
