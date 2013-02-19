@@ -1,0 +1,1924 @@
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>jQuery Level 1 &mdash; jQuery Level 1 2012-02-17 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/single.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2012-02-17',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    <link rel="top" title="jQuery Level 1 2012-02-17 documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="jquery-level-1">
+<h1>jQuery Level 1</h1>
+<ul class="simple">
+<li>Course: jQuery Level 1 (EDTECH 533)</li>
+<li>Author: Christer Edwards</li>
+<li>Revision: 2013-02-17</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="welcome">
+<h2>Welcome</h2>
+<ul class="simple">
+<li>Schedule</li>
+<li>Facilities</li>
+<li>Introductions</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="requirements">
+<h2>Requirements</h2>
+<ul class="simple">
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="overview">
+<h2>Overview</h2>
+<ul class="simple">
+<li>History</li>
+<li>Resources &amp; Help</li>
+<li>Development Environment</li>
+<li>Installation</li>
+<li>Basic CSS Selectors</li>
+<li>Pseudo-Selectors (jQuery Extensions)</li>
+<li>Traversing the DOM</li>
+<li>DOM Manipulation</li>
+<li>Events</li>
+<li>Hands-On Projects</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="what-is-jquery">
+<h2>What is jQuery</h2>
+<p>jQuery is a multi-browser JavaScript library designed to simplify the client-side scripting of HTML.</p>
+
+</article>
+<article class="slide level-2" id="history">
+<h2>History</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://ejohn.org/blog/selectors-in-javascript/">Idea formed</a> in 2005</li>
+<li><a class="reference external" href="http://ejohn.org/blog/barcampnyc-wrap-up/">Formally announced</a> in early 2006</li>
+<li>Author: <a class="reference external" href="http://ejohn.org/about/">John Resig</a></li>
+</ul>
+
+</article>
+<article class="slide level-2" id="local-resources">
+<h2>Local Resources</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://utahjs.com">utahjs.com</a></li>
+<li><a class="reference external" href="http://webchat.freenode.net/?channels=utahjs">#utahjs</a> IRC (freenode)</li>
+<li>Monthly Presentations</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="online-help">
+<h2>Online Help</h2>
+<ul class="simple">
+<li><a class="reference external" href="http://forum.jquery.com">jQuery Forum</a></li>
+<li><a class="reference external" href="http://blog.jquery.com">jQuery Blog</a></li>
+<li><a class="reference external" href="http://docs.jquery.com">jQuery Docs</a></li>
+<li><a class="reference external" href="http://docs.jquery.com/Tutorials">jQuery Tutorials</a></li>
+</ul>
+
+</article>
+<article class="slide level-2" id="troubleshooting">
+<h2>Troubleshooting</h2>
+<p>The <tt class="docutils literal"><span class="pre">console.log</span></tt> method allows you to send log output to the JavaScript
+console within the browser. This can be very helpful in troubleshooting your
+jQuery code.</p>
+
+</article>
+<article class="slide level-2" id="development-environment">
+<h2>Development Environment</h2>
+<ul class="simple">
+<li>Text Editor</li>
+<li>Web Browser</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="installation">
+<h2>Installation</h2>
+<ul class="simple">
+<li>Local Source</li>
+<li>CDN (Content Delivery Network)</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="local-production-vs-development">
+<h2>Local (Production vs Development)</h2>
+<p><a class="reference external" href="http://jquery.com/download/">Download jQuery</a></p>
+<p>Which one should I use? Production or Development?</p>
+
+</article>
+<article class="slide level-2" id="installation-local">
+<h2>Installation - Local</h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;jquery.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="installation-cdn-google">
+<h2>Installation - CDN (Google)</h2>
+<p>Use <a class="reference external" href="https://developers.google.com/speed/libraries/devguide#jquery">Google Hosted Libraries</a> CDN service.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="installation-cdn-microsoft">
+<h2>Installation - CDN (Microsoft)</h2>
+<p>Use <a class="reference external" href="http://www.asp.net/ajaxlibrary/cdn.ashx#jQuery_Releases_on_the_CDN_0">Microsoft Ajax CDN</a></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="installation-cdn-jquery">
+<h2>Installation - CDN (jQuery)</h2>
+<p>Use <a class="reference external" href="http://jquery.com/download/">jQuery CDN</a></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.9.0.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="getting-started">
+<h2>Getting Started</h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Example<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.9.0.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="head-vs-body">
+<h2>Head vs Body</h2>
+<p>Should you place your jQuery code in the <tt class="docutils literal"><span class="pre">head</span></tt> or <tt class="docutils literal"><span class="pre">body</span></tt> of your HTML document? Why?</p>
+
+</article>
+<article class="slide level-2" id="document-ready">
+<h2>$(document).ready</h2>
+<p>If you need to load jQuery in the <tt class="docutils literal"><span class="pre">head</span></tt> of your document, you'll need to use
+the <tt class="docutils literal"><span class="pre">$(document).ready</span></tt> method. This tells jQuery to wait until the full
+document (the page) is loaded before executing the code.</p>
+
+</article>
+<article class="slide level-2" id="document-ready-example">
+<h2>$(document).ready (Example)</h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Example<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.9.0.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="best-practice">
+<h2>Best practice?</h2>
+<p>It is generally best practice to load jQuery in the body of your document, in
+which case it is not required to use <tt class="docutils literal"><span class="pre">$(document).ready</span></tt>.</p>
+
+</article>
+<article class="slide level-2" id="jquery-vs">
+<h2>jQuery() vs $()</h2>
+<p><tt class="docutils literal"><span class="pre">$()</span></tt> is a shortcut for <tt class="docutils literal"><span class="pre">jQuery()</span></tt>. It is very common to see <tt class="docutils literal"><span class="pre">$()</span></tt> used in jQuery scripts.</p>
+
+</article>
+<article class="slide level-2" id="lab-1">
+<h2>Lab 1</h2>
+<ul class="simple">
+<li>Create a template HTML document</li>
+<li>Include the latest jQuery via CDN</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="basic-css-selectors">
+<h1>Basic CSS selectors</h1>
+
+</article>
+<article class="slide level-2" id="all-selector">
+<h2>All Selector (&quot;*&quot;)</h2>
+<p>Selects all elements.</p>
+<p>Find every element (including head, body, etc) in the document.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+    <span class="kd">var</span> <span class="nx">elementCount</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elementCount</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="class-selector-class">
+<h2>Class Selector (&quot;.class&quot;)</h2>
+<p>Selects all elements with the given class. An element can have multiple
+classes; only one of them must match. For class selectors, jQuery uses
+JavaScript's native <tt class="docutils literal"><span class="pre">getElementsByClassName()</span></tt> function if the browser
+supports it.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;emphasis&quot;</span><span class="nt">&gt;</span>This content should be emphasised<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.emphasis&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;font-style&quot;</span><span class="p">,</span> <span class="s2">&quot;italic&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="element-selector-element">
+<h2>Element Selector (&quot;element&quot;)</h2>
+<p>Selects all elements with the given tag name.</p>
+<p>JavaScript's <tt class="docutils literal"><span class="pre">getElementsByTagName()</span></tt> function is called to return the
+appropriate elements when this expression is used.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>This content should be bold<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;font-weight&quot;</span><span class="p">,</span> <span class="s2">&quot;bold&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id-selector-id">
+<h2>ID Selector (&quot;#id&quot;)</h2>
+<p>Selects a single element with the given id attribute.</p>
+<p>Each id value must be used only once within a document. If more than one
+element has been assigned the same ID, queries that use that ID will only
+select the first matched element in the DOM. This behavior should not be relied
+on, however; a document with more than one element using the same ID is
+invalid.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;underline&quot;</span><span class="nt">&gt;</span>This content should be underlined<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#underline&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;text-decoration&quot;</span><span class="p">,</span> <span class="s2">&quot;underline&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="attribute-selector">
+<h2>Attribute Selector</h2>
+<p>Selects elements that have the specified attribute with a value exactly equal
+to a certain value.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form&gt;</span>
+First Name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;firstname&quot;</span><span class="nt">&gt;&lt;/br&gt;</span>
+Last Name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;lastname&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;firstname&quot;]&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="multiple-selector-selector1-selector2">
+<h2>Multiple Selector (&quot;selector1, selector2&quot;)</h2>
+<p>Selects the combined results of all the specified selectors.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;emphasis&quot;</span><span class="nt">&gt;</span>This will be green<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>This will be normal<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;underline&quot;</span><span class="nt">&gt;</span>This will be green<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div.emphasis,div#underline&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-2">
+<h2>Lab 2</h2>
+<ul class="simple">
+<li>Create document(s) using 3 of the 6 Basic CSS Selectors.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>All Selector</li>
+<li>Class Selector</li>
+<li>Element Selector</li>
+<li>ID Selector</li>
+<li>Attribute Selector</li>
+<li>Multiple Selectors</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-1" id="pseudo-selectors-jquery-extensions">
+<h1>Pseudo Selectors (jQuery Extensions)</h1>
+
+</article>
+<article class="slide level-2" id="performance-note">
+<h2>Performance Note</h2>
+<p>Because these are jQuery extensions and not part of the CSS specification,
+queries using pseudo-selectors cannot take advantage of the performance boost
+provided by the native DOM <tt class="docutils literal"><span class="pre">querySelectorAll()</span></tt> method. To achieve the best
+performance when using pseudo-selectors to select elements, first select the
+elements using a pure CSS selector, then use <tt class="docutils literal"><span class="pre">.filter(&quot;selector&quot;)</span></tt>.</p>
+
+</article>
+<article class="slide level-2" id="css-vs-addclass">
+<h2>.css() vs .addClass()</h2>
+<p>HTML, CSS and JavaScript each have specific roles to play in the browser. Using
+the <tt class="docutils literal"><span class="pre">.css()</span></tt> method applies style using JavaScript, where it should be
+managed directly in the CSS. Using <tt class="docutils literal"><span class="pre">.addClass()</span></tt> allows us to update styling,
+while keeping style declarations out of our JavaScript.</p>
+
+</article>
+<article class="slide level-2" id="animated">
+<h2>:animated</h2>
+<p>Select all elements that are in the progress of an animation at the time the
+selector is run.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:animated&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="button">
+<h2>:button</h2>
+<p>Selects all button elements and elements of type button.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:button&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;green&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="checkbox">
+<h2>:checkbox</h2>
+<p>Selects all elements of type checkbox.</p>
+<p><strong>jQuery &gt;=1.6</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:checkbox&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:checkbox&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p><strong>jQuery &lt;=1.5</strong></p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:checkbox&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">,</span> <span class="s2">&quot;checked&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="eq-n">
+<h2>:eq(n)</h2>
+<p>Select the element at index n within the matched set.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:eq(2)&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="even">
+<h2>:even</h2>
+<p>Selects even elements, zero-indexed. See also odd.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:even&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="file">
+<h2>:file</h2>
+<p>Selects all elements of type file.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:file&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="first">
+<h2>:first</h2>
+<p>Selects the first matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:first&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="gt-n">
+<h2>:gt(n)</h2>
+<p>Select all elements at an index greater than index within the matched set.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:gt(4)&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="has-n">
+<h2>:has(n)</h2>
+<p>Selects elements which contain at least one element that matches the specified
+selector.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.border</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:has(p)&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="header">
+<h2>:header</h2>
+<p>Selects all elements that are headers, like h1, h2, h3 and so on.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:header&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="hidden">
+<h2>:hidden</h2>
+<p>Selects all elements that are hidden.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:hidden&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="image">
+<h2>:image</h2>
+<p>Selects all elements of type image.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:image&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="input">
+<h2>:input</h2>
+<p>Selects all input, textarea, select and button elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">totalInput</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:input&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">totalInput</span> <span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="last">
+<h2>:last</h2>
+<p>Selects the last matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:last&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lt-n">
+<h2>:lt(n)</h2>
+<p>Select all elements at an index less than index within the matched set.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:lt(4)&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="odd">
+<h2>:odd</h2>
+<p>Selects odd elements, zero-indexed. See also even.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:odd&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="parent">
+<h2>:parent</h2>
+<p>Select all elements that have at least one child node (either an element or
+text).</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;li&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:parent&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="password">
+<h2>:password</h2>
+<p>Selects all elements of type password.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:password&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="radio">
+<h2>:radio</h2>
+<p>Selects all elements of type radio.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:radio&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="reset">
+<h2>:reset</h2>
+<p>Selects all elements of type reset.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:reset&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="selected">
+<h2>:selected</h2>
+<p>Selects all elements that are selected.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;select option&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:selected&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="submit">
+<h2>:submit</h2>
+<p>Selects all elements of type submit.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:submit&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="text">
+<h2>:text</h2>
+<p>Selects all elements of type text.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:text&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="visible">
+<h2>:visible</h2>
+<p>Selects all elements that are visible.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.hidden</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:visible&quot;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;hidden&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-3">
+<h2>Lab 3</h2>
+<ul class="simple">
+<li>Expand your HTML template to include a form and list.</li>
+<li>Use jQuery to highlight selected elements within your document.</li>
+<li>Implement ten of the pseudo-selectors outlined in this section.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>:animated, :button, :checkbox, :eq(), :even, :file, :first, :gt(), :has(), :header, :hidden, :image, :input, :last, :lt(), :odd, :parent, :password, :radio, :reset, :selected, :submit, :text, :visible</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-1" id="traversing-the-dom">
+<h1>Traversing the DOM</h1>
+
+</article>
+<article class="slide level-2" id="children">
+<h2>.children()</h2>
+<p>Get the children of each element in the set of matched elements, optionally
+filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="children-example">
+<h2>.children() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 2&quot;</span><span class="nt">&gt;</span>
+<span class="hll">             <span class="nt">&lt;li&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>         <span class="nt">&lt;/ul&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 3&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li&gt;</span>sibling<span class="nt">&lt;/li&gt;</span>
+             <span class="nt">&lt;li&gt;</span>sibling<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul.level-2&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="closest">
+<h2>.closest()</h2>
+<p>For each element in the set, get the first element that matches the selector by
+testing the element itself and traversing up through its ancestors in the DOM
+tree.</p>
+
+</article>
+<article class="slide level-2" id="closest-example">
+<h2>.closest() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+<span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;/ul&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#child-2&#39;</span><span class="p">).</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="find">
+<h2>.find()</h2>
+<p>Get the descendants of each element in the current set of matched elements,
+filtered by a selector, jQuery object, or element.</p>
+
+</article>
+<article class="slide level-2" id="find-example">
+<h2>.find() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+<span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+<span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;/ul&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul.level-2&#39;</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="next">
+<h2>.next()</h2>
+<p>Get the immediately following sibling of each element in the set of matched
+elements. If a selector is provided, it retrieves the next sibling only if it
+matches that selector.</p>
+
+</article>
+<article class="slide level-2" id="next-example">
+<h2>.next() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+<span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;/ul&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#child-1&#39;</span><span class="p">).</span><span class="nx">next</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="nextall">
+<h2>.nextAll()</h2>
+<p>Get all following siblings of each element in the set of matched elements,
+optionally filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="nextall-example">
+<h2>.nextAll() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+<span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;/ul&gt;</span>
+</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#parent-1&#39;</span><span class="p">).</span><span class="nx">nextAll</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="nextuntil">
+<h2>.nextUntil()</h2>
+<p>Get all following siblings of each element up to but not including the element
+matched by the selector, DOM node, or jQuery object passed.</p>
+
+</article>
+<article class="slide level-2" id="nextuntil-example">
+<h2>.nextUntil() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-1a&quot;</span><span class="nt">&gt;</span>level 1<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-1b&quot;</span><span class="nt">&gt;</span>level 1<span class="nt">&lt;/li&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="hll"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-2a&quot;</span><span class="nt">&gt;</span>level 2<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-2b&quot;</span><span class="nt">&gt;</span>level 2<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-3a&quot;</span><span class="nt">&gt;</span>level 3<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-3b&quot;</span><span class="nt">&gt;</span>level 3<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;/ul&gt;</span>
+</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul.level-1&#39;</span><span class="p">).</span><span class="nx">nextUntil</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="offsetparent">
+<h2>.offsetParent()</h2>
+<p>Get the closest ancestor element that is positioned.</p>
+
+</article>
+<article class="slide level-2" id="offsetparent-example">
+<h2>.offsetParent() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+<span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span> <span class="na">style=</span><span class="s">&quot;position: relative;&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span> <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul.level-3&#39;</span><span class="p">).</span><span class="nx">offsetParent</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id1">
+<h2>.parent()</h2>
+<p>Get the parent of each element in the current set of matched elements,
+optionally filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="parent-example">
+<h2>.parent() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+<span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;/ul&gt;</span>
+<span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span> <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#child-1&#39;</span><span class="p">).</span><span class="nx">parent</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="parents">
+<h2>.parents()</h2>
+<p>Get the ancestors of each element in the current set of matched elements,
+optionally filtered by a selector.</p>
+<p>The .parents() and .parent() methods are similar, except that the latter only
+travels a single level up the DOM tree.</p>
+
+</article>
+<article class="slide level-2" id="parents-example">
+<h2>.parents() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre><span class="hll"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;/ul&gt;</span>
+</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#grandchild-1&#39;</span><span class="p">).</span><span class="nx">parents</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="parentsuntil">
+<h2>.parentsUntil()</h2>
+<p>Get the ancestors of each element in the current set of matched elements, up to
+but not including the element matched by the selector, DOM node, or jQuery
+object.</p>
+
+</article>
+<article class="slide level-2" id="parentsuntil-example">
+<h2>.parentsUntil() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+<span class="hll">                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">                 <span class="nt">&lt;/ul&gt;</span>
+</span>         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#grandchild-1&#39;</span><span class="p">).</span><span class="nx">parentsUntil</span><span class="p">(</span><span class="s1">&#39;ul.level-2&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prev">
+<h2>.prev()</h2>
+<p>Get the immediately preceding sibling of each element in the set of matched
+elements, optionally filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="prev-example">
+<h2>.prev() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+<span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+</span>                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;/ul&gt;</span>
+<span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span> <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul.level-3&#39;</span><span class="p">).</span><span class="nx">prev</span><span class="p">(</span><span class="s1">&#39;ul.level-2&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prevall">
+<h2>.prevAll()</h2>
+<p>Get all preceding siblings of each element in the set of matched elements,
+optionally filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="prevall-example">
+<h2>.prevAll() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-1&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;parent-2&quot;</span><span class="nt">&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-1&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+             <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;child-2&quot;</span><span class="nt">&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+<span class="hll">                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-1&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+</span>                     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;grandchild-2&quot;</span><span class="nt">&gt;</span>grandchild<span class="nt">&lt;/li&gt;</span>
+                 <span class="nt">&lt;/ul&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;li#grandchild-2&#39;</span><span class="p">).</span><span class="nx">prevAll</span><span class="p">().</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prevuntil">
+<h2>.prevUntil()</h2>
+<p>Get all preceding siblings of each element up to but not including the element
+matched by the selector, DOM node, or jQuery object.</p>
+
+</article>
+<article class="slide level-2" id="prevuntil-example">
+<h2>.prevUntil() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-1a&quot;</span><span class="nt">&gt;</span>level 1<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-1b&quot;</span><span class="nt">&gt;</span>level 1<span class="nt">&lt;/li&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+<span class="hll"> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-2&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-2a&quot;</span><span class="nt">&gt;</span>level 2<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">     <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-2b&quot;</span><span class="nt">&gt;</span>level 2<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll"> <span class="nt">&lt;/ul&gt;</span>
+</span> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level-3&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-3a&quot;</span><span class="nt">&gt;</span>level 3<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">id=</span><span class="s">&quot;level-3b&quot;</span><span class="nt">&gt;</span>level 3<span class="nt">&lt;/li&gt;</span>
+ <span class="nt">&lt;/ul&gt;</span>
+
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;ul.level-3&#39;</span><span class="p">).</span><span class="nx">prevUntil</span><span class="p">(</span><span class="s1">&#39;ul.level-1&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="siblings">
+<h2>.siblings()</h2>
+<p>Get the siblings of each element in the set of matched elements, optionally
+filtered by a selector.</p>
+
+</article>
+<article class="slide level-2" id="siblings-example">
+<h2>.siblings() - Example</h2>
+<div class="highlight-html"><div class="highlight"><pre> <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 1&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;li&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+     <span class="nt">&lt;li&gt;</span>parent<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 2&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;li&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+             <span class="nt">&lt;li&gt;</span>child<span class="nt">&lt;/li&gt;</span>
+         <span class="nt">&lt;/ul&gt;</span>
+<span class="hll">         <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;level 3&quot;</span><span class="nt">&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li&gt;</span>sibling<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">             <span class="nt">&lt;li&gt;</span>sibling<span class="nt">&lt;/li&gt;</span>
+</span><span class="hll">         <span class="nt">&lt;/ul&gt;</span>
+</span> <span class="nt">&lt;/ul&gt;</span>
+ <span class="nt">&lt;script&gt;</span>
+     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;ul.level-2&quot;</span><span class="p">).</span><span class="nx">siblings</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span>
+ <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-4">
+<h2>Lab 4</h2>
+<ul class="simple">
+<li>Practice using the following DOM traversal methods.<ul>
+<li>.children()</li>
+<li>.closest()</li>
+<li>.find()</li>
+<li>.next(), .nextAll(), .nextUntil()</li>
+<li>.offsetParent()</li>
+<li>.parent(), .parents(), .parentsUntil()</li>
+<li>.prev(), .prevAll(), .prevUntil()</li>
+<li>.siblings()</li>
+</ul>
+</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="dom-manipulation">
+<h1>DOM Manipulation</h1>
+
+</article>
+<article class="slide level-2" id="addclass">
+<h2>.addClass()</h2>
+<p>Adds the specified class(es) to each of the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.content&quot;</span><span class="p">).</span><span class="nx">children</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="after">
+<h2>.after()</h2>
+<p>Insert content, specified by the parameter, after each element in the set of
+matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">after</span><span class="p">(</span><span class="s2">&quot;World!&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="append">
+<h2>.append()</h2>
+<p>Insert content, specified by the parameter, to the end of each element in the
+set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot; World!&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="appendto">
+<h2>.appendTo()</h2>
+<p>Insert every element in the set of matched elements to the end of the target.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;World!&quot;</span><span class="p">).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="attr">
+<h2>.attr()</h2>
+<p>Get the value of an attribute for the first element in the set of matched
+elements or set one or more attributes for every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;img</span> <span class="na">id=</span><span class="s">&quot;jquery-logo&quot;</span> <span class="na">src=</span><span class="s">&quot;jquery.jpg&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#jquery-logo&quot;</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;alt&quot;</span><span class="p">,</span> <span class="s2">&quot;jQuery Logo&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="before">
+<h2>.before()</h2>
+<p>Insert content, specified by the parameter, before each element in the set of
+matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>World!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">before</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="clone">
+<h2>.clone()</h2>
+<p>Create a deep copy of the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;b&gt;</span>World!<span class="nt">&lt;/b&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">).</span><span class="nx">clone</span><span class="p">().</span><span class="nx">appendTo</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="css">
+<h2>.css()</h2>
+<p>Get the value of a style property for the first element in the set of matched
+elements or set one or more CSS properties for every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nc">.highlight</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">yellow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.content&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="empty">
+<h2>.empty()</h2>
+<p>Remove all child nodes of the set of matched elements from the DOM.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;.content&quot;</span><span class="p">).</span><span class="nx">empty</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="height">
+<h2>.height()</h2>
+<p>Get the current computed height for the first element in the set of matched
+elements or set the height of every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span> <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">height</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="html">
+<h2>.html()</h2>
+<p>Get the HTML contents of the first element in the set of matched elements or
+set the HTML contents of every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;foo&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div.foo&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="insertafter">
+<h2>.insertAfter()</h2>
+<p>Insert every element in the set of matched elements after the target.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>World!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p#world&quot;</span><span class="p">).</span><span class="nx">insertAfter</span><span class="p">(</span><span class="s2">&quot;p#hello&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="insertbefore">
+<h2>.insertBefore()</h2>
+<p>Insert every element in the set of matched elements before the target.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>World!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p#hello&quot;</span><span class="p">).</span><span class="nx">insertBefore</span><span class="p">(</span><span class="s2">&quot;p#world&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prepend">
+<h2>.prepend()</h2>
+<p>Insert content, specified by the parameter, to the beginning of each element in
+the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">prepend</span><span class="p">(</span><span class="s2">&quot;Hello &quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prependto">
+<h2>.prependTo()</h2>
+<p>Insert every element in the set of matched elements to the beginning of the
+target.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>Hello <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p#hello&quot;</span><span class="p">).</span><span class="nx">prependTo</span><span class="p">(</span><span class="s2">&quot;p#world&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="prop">
+<h2>.prop()</h2>
+<p>Get the value of a property for the first element in the set of matched
+elements or set one or more properties for every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:checkbox&quot;</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">&quot;checked&quot;</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="remove">
+<h2>.remove()</h2>
+<p>Remove the set of matched elements from the DOM.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;button&gt;</span>Click to Remove paragraphs<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;p&gt;</span>Hello World!<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">remove</span><span class="p">()</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="removeattr">
+<h2>.removeAttr()</h2>
+<p>Remove an attribute from each element in the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre>Name: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span> <span class="na">value=</span><span class="s">&quot;John Doe&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:text&quot;</span><span class="p">).</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="removeclass">
+<h2>.removeClass()</h2>
+<p>Remove a single class, multiple classes, or all classes from each element in
+the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:even&quot;</span><span class="p">).</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="replaceall">
+<h2>.replaceAll()</h2>
+<p>Replace each target element with the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">).</span><span class="nx">replaceAll</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="replacewith">
+<h2>.replaceWith()</h2>
+<p>Replace each element in the set of matched elemesnt with the provided new
+content and return the set of elements that was removed.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>Goodbye World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">replaceWith</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id2">
+<h2>.text()</h2>
+<p>Get the combined text contents of each element in the set of matched elements,
+including their descendants, or set the text contents of the matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="toggleclass">
+<h2>.toggleClass()</h2>
+<p>Add or remove one or more classes from each element in the set of matched
+elements, depending on either the class's presence or the value of the switch
+argument.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;button&gt;</span>Click to Toggle<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">toggleClass</span><span class="p">(</span><span class="s2">&quot;highlight&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="unwrap">
+<h2>.unwrap()</h2>
+<p>Remove the parents of the set of matched elements from the DOM, leaving the
+matched elements in their place.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">unwrap</span><span class="p">();</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="width">
+<h2>.width()</h2>
+<p>Get the current computed width for the first element in the set of matched
+elements or set the width of every matched element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span> <span class="k">margin</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span> <span class="k">background</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">width</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="wrap">
+<h2>.wrap()</h2>
+<p>Wrap an HTML structure around each element in the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s2">&quot;&lt;div&gt;&lt;/div&gt;&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="wrapall">
+<h2>.wrapAll()</h2>
+<p>Wrap an HTML structure around all elements in the set of matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">wrapAll</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="wrapinner">
+<h2>.wrapInner()</h2>
+<p>Wrap an HTML structure around the content or each element in the set of matched
+elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Hello<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>World<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">wrappInner</span><span class="p">(</span><span class="s2">&quot;&lt;strong&gt;&lt;/strong&gt;&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-5">
+<h2>Lab 5</h2>
+<ul class="simple">
+<li>Use jQuery to manipulate selected elements within your document.</li>
+<li>Implement 10 of the following DOM manipulation methods.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>.addClass(), .after(), .append(), .appendTo(), .attr(), .before(), .clone(), .css(), .empty(), .height(), .html(), .insertAfter(), .insertBefore(), .prepend(), .prependTo(), .prop(), .remove(), .removeAttr(), .removeClass(), .replaceAll(), .replaceWith, .text(), .toggleClass(), .unwrap(), .width(), .wrap(), .wrapAll(), .wrapInner()</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-1" id="events">
+<h1>Events</h1>
+
+</article>
+<article class="slide level-2" id="click">
+<h2>.click()</h2>
+<p>Bind an event handler to the &quot;click&quot; JavaScript event, or trigger that event
+on an element.</p>
+<div class="highlight-html"><pre>&lt;button&gt;Click Me&lt;/button&gt;
+&lt;script&gt;
+$('button').on('click', function() {
+    alert('Handler for .click() called.");
+});
+&lt;/script&gt;</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="dblclick">
+<h2>.dblclick()</h2>
+<p>Bind an event handler to the &quot;dblclick&quot; JavaScript event, or trigger that event
+on an element.</p>
+<div class="highlight-html"><pre>&lt;button&gt;Click Me&lt;/button&gt;
+&lt;script&gt;
+$('button').on('dblclick', function() {
+    alert('Handler for .dblclick() called.");
+});
+&lt;/script&gt;</pre>
+</div>
+
+</article>
+<article class="slide level-2" id="focusin">
+<h2>.focusin()</h2>
+<p>Bind an event handler to the &quot;focusin&quot; event.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">span</span> <span class="p">{</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;&lt;span&gt;</span>.focusin() triggered<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;&lt;span&gt;</span>.focusin() triggered<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;focusin&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">find</span><span class="p">(</span><span class="s2">&quot;span&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">(</span><span class="s2">&quot;display&quot;</span><span class="p">,</span> <span class="s1">&#39;inline&#39;</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="hover">
+<h2>.hover()</h2>
+<p>Bind two handlers to the matched elements, to be executed when the mouse
+pointer enters and leaves the elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">).</span><span class="nx">hover</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">).</span><span class="nx">slideToggle</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="mousedown">
+<h2>.mousedown()</h2>
+<p>Bind an event handler to the &quot;mousedown&quot; JavaScript event, or trigger that
+event on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#target&#39;</span><span class="p">).</span><span class="nx">mousedown</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Handler for .mousedown() called.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="mouseenter">
+<h2>.mouseenter()</h2>
+<p>Bind an event handler to be fired when the mouse enters an element, or trigger
+that handler on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#target&#39;</span><span class="p">).</span><span class="nx">mouseenter</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Handler for .mouseenter called.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="mouseleave">
+<h2>.mouseleave()</h2>
+<p>Bind an event handler to be fired when the mouse leaves an element, or trigger
+that handler on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#target&#39;</span><span class="p">).</span><span class="nx">mouseleave</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Handler for .mouseleave called.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="mouseout">
+<h2>.mouseout()</h2>
+<p>Bind an event handler to the &quot;mouseout&quot; JavaScript event, or trigger that event
+on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;outer&quot;</span><span class="nt">&gt;</span>Mouse Out<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#outer&#39;</span><span class="p">).</span><span class="nx">mouseout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Handler for .mouseout() called.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="mouseup">
+<h2>.mouseup()</h2>
+<p>Bind an event handler to the &quot;mousedown&quot; JavaScript event, or trigger that
+event on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#target&#39;</span><span class="p">).</span><span class="nx">mouseup</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Handler for .mouseup() called.&#39;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="select">
+<h2>.select()</h2>
+<p>Bind an event handler to the &quot;select&quot; JavaScript event, or trigger that event
+on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre>Username: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;username&quot;</span> <span class="na">value=</span><span class="s">&quot;username&quot;</span> <span class="nt">/&gt;&lt;br</span> <span class="nt">/&gt;</span>
+Password: <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;password&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;:input&quot;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;Something was selected&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">().</span><span class="nx">fadeOut</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="id3">
+<h2>.submit()</h2>
+<p>Bind an event handler to the &quot;submit&quot; JavaScript event, or trigger that event
+on an element.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;form&quot;</span><span class="p">).</span><span class="nx">submit</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-6">
+<h2>Lab 6</h2>
+<ul class="simple">
+<li>Use jQuery to monitor selected events within your document.</li>
+<li>Implement 5 of the following event methods.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>.click(), .dblclick(), .focusin(), .hover(), .mousedown(), .mouseenter(), .mouseleave(), .mouseout(), .mouseup(), .select(), .submit()</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-1" id="effects">
+<h1>Effects</h1>
+
+</article>
+<article class="slide level-2" id="animate">
+<h2>.animate()</h2>
+<p>Perform a custom animation of a set of CSS properties.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">left</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>Click to animate<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#right&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">animate</span><span class="p">(</span> <span class="p">{</span><span class="s2">&quot;left&quot;</span><span class="o">:</span> <span class="s2">&quot;+=50px&quot;</span><span class="p">},</span> <span class="s2">&quot;slow&quot;</span> <span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="delay">
+<h2>.delay()</h2>
+<p>Set a timer to delay execution of subsequent items in the queue.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">).</span><span class="nx">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="fadein">
+<h2>.fadeIn()</h2>
+<p>Display the matched elements by fading them to opaque.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="s2">&quot;:hidden&quot;</span><span class="p">).</span><span class="nx">fadeIn</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="fadeout">
+<h2>.fadeOut()</h2>
+<p>Hide the matched elements by fading them to transparent.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeOut</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="fadeto">
+<h2>.fadeTo()</h2>
+<p>Adjust the opacity of the matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeTo</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="fadetoggle">
+<h2>.fadeToggle()</h2>
+<p>Display or hide the matched elements by animating their opacity.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">fadeToggle</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">,</span> <span class="s2">&quot;linear&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="hide">
+<h2>.hide()</h2>
+<p>Hide the matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Click to hide<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">hide</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="show">
+<h2>.show()</h2>
+<p>Display the matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Click to show<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">show</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="slidedown">
+<h2>.slideDown()</h2>
+<p>Display the matched elements with a sliding motion.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Click to slideDown<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="slidetoggle">
+<h2>.slideToggle()</h2>
+<p>Display or hide the matched elements with a sliding motion.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Click to slideDown<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">slideDown</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="slideup">
+<h2>.slideUp()</h2>
+<p>Hide the matched elements with a sliding motion.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Click to slideUp<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">slideUp</span><span class="p">(</span><span class="s2">&quot;slow&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="toggle">
+<h2>.toggle()</h2>
+<p>Display or hide the matched elements.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;style&gt;</span>
+<span class="nt">div</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span> <span class="k">height</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="k">width</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">div</span><span class="nc">.hidden</span> <span class="p">{</span> <span class="k">background-color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span> <span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;button&gt;</span>Toggle Display<span class="nt">&lt;/button&gt;</span>
+<span class="nt">&lt;div&gt;</span>Green<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;hidden&quot;</span><span class="nt">&gt;</span>Red<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+</div>
+
+</article>
+<article class="slide level-2" id="lab-7">
+<h2>Lab 7</h2>
+<ul class="simple">
+<li>Use jQuery to add selected effects within your document.</li>
+<li>Implement 5 of the following effect methods.</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li>.animate(), .delay(), .fadeIn(), .fadeOut(), .fadeTo(), .fadeToggle(), .hide(), .show(), .slideDown(), .slideToggle(), .slideUp(), .toggle()</li>
+</ul>
+</div></blockquote>
+
+</article>
+<article class="slide level-2" id="lab-8">
+<h2>Lab 8</h2>
+<p>Demonstrations and hands-on labs:</p>
+<ul class="simple">
+<li>FAQ</li>
+<li>CSS Switcher</li>
+<li>Contact Form</li>
+<li>Image Slider</li>
+<li>Dynamic Content</li>
+</ul>
+
+</article>
+<article class="slide level-1" id="class-review">
+<h1>Class Review</h1>
+<p>Please take five minutes to review the course.</p>
+
+</article>
+<article class="slide level-2" id="contact-me">
+<h2>Contact Me</h2>
+<p>Christer Edwards</p>
+<ul class="simple">
+<li><a class="reference external" href="mailto:christer&#46;edwards&#37;&#52;&#48;gmail&#46;com">christer<span>&#46;</span>edwards<span>&#64;</span>gmail<span>&#46;</span>com</a></li>
+</ul>
+
+</article>
+
+
+</section>
+  </body>
+</html>
