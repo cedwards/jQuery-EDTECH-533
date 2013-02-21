@@ -71,11 +71,13 @@ Local Resources
 Online Help
 ===========
 
+- `jQuery API`_
 - `jQuery Forum`_
 - `jQuery Blog`_
 - `jQuery Docs`_
 - `jQuery Tutorials`_
 
+.. _`jQuery API`: http://api.jquery.com
 .. _`jQuery Forum`: http://forum.jquery.com
 .. _`jQuery Blog`: http://blog.jquery.com
 .. _`jQuery Docs`: http://docs.jquery.com
@@ -1552,9 +1554,8 @@ Events
 Bind an event handler to the "click" JavaScript event, or trigger that event 
 on an element.
 
-.. code-block:: html
+.. code-block:: javascript
 
-    <button>Click Me</button>
     <script>
     $('button').on('click', function() {
         alert('Handler for .click() called.");
@@ -1567,9 +1568,8 @@ on an element.
 Bind an event handler to the "dblclick" JavaScript event, or trigger that event 
 on an element.
 
-.. code-block:: html
+.. code-block:: javascript
 
-    <button>Click Me</button>
     <script>
     $('button').on('dblclick', function() {
         alert('Handler for .dblclick() called.");
